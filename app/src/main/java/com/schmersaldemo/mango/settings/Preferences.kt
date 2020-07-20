@@ -7,7 +7,6 @@ import androidx.preference.PreferenceManager
 
 /*
  * @Author:Puneet Bahuguna
- * @Year:22-11-2019-20
  * @Description:This class saves all app related shared preferences.*/
 
 object Preferences {
@@ -18,6 +17,7 @@ object Preferences {
     private val LANGPOSITION="langposition"
     private val ISLOGGED="islogged"
     private val ISLOCKED="islocked"
+    private val JWTTOKEN="jwttoken"
 
 
     private fun readInt(_context: Context, key: String, defaultValue: Int): Int {
@@ -57,9 +57,9 @@ object Preferences {
         editor.apply()
     }
 
-    fun clearPreferences(mContext: Context) {
+    /*fun clearPreferences(mContext: Context) {
         PreferenceManager.getDefaultSharedPreferences(mContext).edit().clear().apply()
-    }
+    }*/
 
     fun getuserRoleID(_context: Context): Int {
         return readInt(_context, USERROLE_ID, -1)
@@ -93,6 +93,12 @@ object Preferences {
     }
     fun setUsername(_context: Context, username: String) {
         writeString(_context, USERNAME, username)
+    }
+    fun getJWT(_context: Context): String? {
+        return readString(_context, JWTTOKEN, null)
+    }
+    fun setJWT(_context: Context, jwt: String) {
+        writeString(_context, JWTTOKEN, jwt)
     }
     fun getLangCode(_context: Context): String? {
         return readString(_context, LANGCODE, "ES-EN")

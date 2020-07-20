@@ -5,6 +5,7 @@ import androidx.room.Insert
 import com.schmersaldemo.mango.data.entity.*
 /***
 Author: Puneet Bahuguna
+ @Description: DB sync operation queries.
  ***/
 @Dao
 interface SyncDao{
@@ -21,7 +22,7 @@ interface SyncDao{
     @Insert
     fun insertCustomerMapping(mapCustomer: List<CustomerMapping>)
 
-    @Insert
+    /*@Insert
     fun insertLanguageList(languageList: List<LanguageList>)
-
+*/
 }

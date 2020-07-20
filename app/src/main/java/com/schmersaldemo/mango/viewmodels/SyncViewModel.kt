@@ -1,4 +1,4 @@
-package com.schmersaldemo.mango.view.viewmodels
+package com.schmersaldemo.mango.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -11,20 +11,24 @@ import kotlinx.coroutines.launch
 
 class SyncViewModel (application: Application): AndroidViewModel(application){
 
-    val syncDao = AppDatabase.getDatabase(application).syncDao()
+    //val syncDao = AppDatabase.getDatabase(application).syncDao()
+    val syncDao = AppDatabase.getDatabase(application)
     fun insertUser(user: User)=viewModelScope.launch(Dispatchers.IO) {
-        SyncRepository(syncDao).insertUser(user)
+        SyncRepository(syncDao.syncDao()).insertUser(user)
     }
     fun insertUserRole(userRole: List<UserRole>)=viewModelScope.launch(Dispatchers.IO) {
-        SyncRepository(syncDao).insertUserRole(userRole)
+        SyncRepository(syncDao.syncDao()).insertUserRole(userRole)
     }
     fun insertCustomer(customerList: List<Customer>)=viewModelScope.launch(Dispatchers.IO) {
-        SyncRepository(syncDao).insertCustomer(customerList)
+        SyncRepository(syncDao.syncDao()).insertCustomer(customerList)
     }
     fun insertCustomerMapping(customerMapping: List<CustomerMapping>)=viewModelScope.launch(Dispatchers.IO) {
-        SyncRepository(syncDao).insertCustomerMapping(customerMapping)
+        SyncRepository(syncDao.syncDao()).insertCustomerMapping(customerMapping)
     }
-    fun insertLanguageList(languageList: List<LanguageList>)=viewModelScope.launch(Dispatchers.IO) {
+    fun deleteAllData()=viewModelScope.launch(Dispatchers.IO){
+        syncDao.clearAllTables()
+    }
+    /*fun insertLanguageList(languageList: List<LanguageList>)=viewModelScope.launch(Dispatchers.IO) {
         SyncRepository(syncDao).insertLanguageList(languageList)
-    }
+    }*/
 }

@@ -1,4 +1,4 @@
-package com.schmersaldemo.mango.view.viewmodels
+package com.schmersaldemo.mango.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -17,10 +17,11 @@ class LoginViewModel(application: Application):AndroidViewModel(application){
         return LoginRepository(loginDao).authenticateLocalUser(username,password)
     }
 
-    suspend fun getLanguageCodes():List<String>{
+   /* suspend fun getLanguageCodes():List<String>{
         return LoginRepository(loginDao).getLanguageCodes()
-    }
-     /*fun insertUser(user:User)=viewModelScope.launch(Dispatchers.IO) {
+    }*/
+    /*fun insertUser(user:User)=viewModelScope.launch(Dispatchers.IO) {
         LoginRepository(loginDao).insertUser(user)
     }*/
+
 }

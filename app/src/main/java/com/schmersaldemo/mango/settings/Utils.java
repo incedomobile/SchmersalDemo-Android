@@ -2,7 +2,9 @@ package com.schmersaldemo.mango.settings;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Base64;
 import com.schmersaldemo.MangoApplication;
+import com.schmersaldemo.mango.R;
 import com.schmersaldemo.mango.view.AddLoginAccount;
 import com.schmersaldemo.mango.view.Login;
 import java.util.Arrays;
@@ -10,6 +12,7 @@ import java.util.List;
 
 /***
  Author: Puneet Bahuguna
+ Description: Common utility methods.
  ***/
 public class Utils {
 
@@ -29,5 +32,19 @@ public class Utils {
 
     public static List<String> getLanguageCode(){
         return Arrays.asList("ES-EN","PT-BR");
+    }
+    public static List<String> getRoles(Context context){
+        return Arrays.asList(context.getString(R.string.selectrole),context.getString(R.string.globaladmin),context.getString(R.string.localadmin),
+                context.getString(R.string.consulting),context.getString(R.string.backoffice),
+                context.getString(R.string.manager));
+    }
+
+    //Method convert plain text and returns into base 64 string
+    public static String getBase64Encoding(String plainText){
+        return Base64.encodeToString(plainText.getBytes(),1);
+    }
+    //Method convert base 64 text and returns into plain original string
+    public static String getBase64Decoding(String encryptString){
+        return new String(Base64.decode(encryptString,1));
     }
 }

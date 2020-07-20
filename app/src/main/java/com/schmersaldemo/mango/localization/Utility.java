@@ -9,7 +9,10 @@ import java.lang.reflect.Method;
 
 import static android.content.pm.PackageManager.GET_META_DATA;
 import static android.os.Build.VERSION_CODES.P;
-
+/***
+ Author: Puneet Bahuguna
+ Description: Common utilty method used in localization.
+ ***/
 public class Utility {
 
     public static void bypassHiddenApiRestrictions() {

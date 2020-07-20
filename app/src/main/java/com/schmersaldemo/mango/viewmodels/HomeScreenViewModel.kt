@@ -1,4 +1,4 @@
-package com.schmersaldemo.mango.view.viewmodels
+package com.schmersaldemo.mango.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

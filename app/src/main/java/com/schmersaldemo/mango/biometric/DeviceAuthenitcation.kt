@@ -1,11 +1,15 @@
 package com.schmersaldemo.mango.biometric
 
 import android.content.Context
-import android.content.res.TypedArray
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.schmersaldemo.mango.R
+
+/*
+* Author: Puneet Bahuguna
+* @Description: Authentication method helper class
+* */
 
 class DeviceAuthenitcation(authlistener: AuthenticationListener) {
     var authlistener: AuthenticationListener? = null

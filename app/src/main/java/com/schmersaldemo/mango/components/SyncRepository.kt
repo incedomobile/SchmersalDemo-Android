@@ -4,6 +4,7 @@ import com.schmersaldemo.mango.data.dao.SyncDao
 import com.schmersaldemo.mango.data.entity.*
 /***
 Author: Puneet Bahuguna
+ @Description: Connects sync dao with view which helps in sync operation.
  ***/
 class SyncRepository(private val syncDao: SyncDao){
 
@@ -19,7 +20,7 @@ class SyncRepository(private val syncDao: SyncDao){
     fun insertUserRole(userRole:List<UserRole>){
         syncDao.insertUserRole(userRole)
     }
-    fun insertLanguageList(languageList:List<LanguageList>){
+    /*fun insertLanguageList(languageList:List<LanguageList>){
         syncDao.insertLanguageList(languageList)
-    }
+    }*/
 }

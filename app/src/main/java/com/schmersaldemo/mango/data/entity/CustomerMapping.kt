@@ -5,10 +5,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 /***
 Author: Puneet Bahuguna
+@Description: Entity class for map_customer table in the database.
  ***/
-@Entity(tableName = "tbl_map_customer")
+@Entity(tableName = "map_customer")
 data class CustomerMapping(
-    @PrimaryKey val map_id:Int,
-    @ColumnInfo(name = "customer_id") val customer_id: Int?,
-    @ColumnInfo(name = "role_id") val role_id: Int?
+    @PrimaryKey val mapid:Int,
+    @ColumnInfo(name = "customerid") val customerid: Int?,
+    @ColumnInfo(name = "roleid") val roleid: Int?
     )

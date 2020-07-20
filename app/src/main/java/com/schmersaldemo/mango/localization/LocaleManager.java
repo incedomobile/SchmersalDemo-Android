@@ -16,6 +16,11 @@ import java.util.Set;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.N;
 
+/***
+ Author: Puneet Bahuguna
+ Description: Class used for setting new selected language as app language
+ ***/
+
 public class LocaleManager {
 
     public static final String LANGUAGE_ENGLISH   = "en";

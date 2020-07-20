@@ -1,5 +1,6 @@
 <resources>
     <string name="menu_customerlist">Lista de clientes</string>
+    <string name="menu_customerlistsap">Lista de clientes - SAP</string>
     <string name="menu_logout">Sair</string>
     <string name="setting">Configuração</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -24,4 +25,17 @@
         Isso solicitará a autenticação sempre que o aplicativo for trazido para primeiro plano.</string>
     <string name="biotitle">Login biométrico para meu aplicativo</string>
     <string name="biomsg">Faça login usando sua credencial biométrica</string>
+    <string name="selectrole">Selecionar função</string>
+    <string name="globaladmin">Administrador global</string>
+    <string name="localadmin">Administrador local</string>
+    <string name="consulting">Consultando</string>
+    <string name="backoffice">BackOffice</string>
+    <string name="manager">Gerente</string>
+    <string name="inpuuterror">O nome de usuário ou a senha estão em branco</string>
+    <string name="loadertext">Sincronizando ..</string>
+    <string name="loading">Carregando..</string>
+    <string name="register">Registrar</string>
+    <string name="registeruser">Registrar Usuário</string>
+    <string name="networkerror">Ocorreu algum erro</string>
+    <string name="registersuccess">Registro efetuado com sucesso</string>
 </resources>

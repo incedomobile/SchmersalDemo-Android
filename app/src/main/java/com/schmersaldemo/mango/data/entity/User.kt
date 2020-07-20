@@ -5,16 +5,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 /***
 Author: Puneet Bahuguna
+@Description: Entity class for user table in the database.
  ***/
-@Entity(tableName = "tbl_user")
+@Entity(tableName = "user")
 data class User(
-    @PrimaryKey val user_id:Int,
     @ColumnInfo(name = "username") val username: String?,
-    @ColumnInfo(name = "password") val password: String?,
-    @ColumnInfo(name = "role_id") val role_id: Int?,
-    @ColumnInfo(name = "country") val country: String?,
-    @ColumnInfo(name = "branch") val branch: String?,
-    @ColumnInfo(name = "access_authorization") val access_authorization: String?
-
-)
+    @ColumnInfo(name = "password") var password: String?,
+    @ColumnInfo(name = "roleid") val roleid: Int?
+){
+    @PrimaryKey(autoGenerate = true) var id:Int=1
+}
 

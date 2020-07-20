@@ -8,6 +8,14 @@
                 android:id="@+id/nav_cuslist"
                 android:icon="@drawable/customerlist"
                 android:title="@string/menu_customerlist"/>
+        <item
+                android:id="@+id/nav_cuslistsap"
+                android:icon="@drawable/customerlist"
+                android:title="@string/menu_customerlistsap"/>
+        <item
+                android:id="@+id/nav_register"
+                android:icon="@drawable/ic_person_add_black_24dp"
+                android:title="@string/registeruser"/>
 
         <item
                 android:id="@+id/nav_setting"

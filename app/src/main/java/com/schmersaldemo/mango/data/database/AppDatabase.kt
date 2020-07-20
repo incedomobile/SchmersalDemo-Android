@@ -10,8 +10,9 @@ import com.schmersaldemo.mango.data.dao.UserDao
 import com.schmersaldemo.mango.data.entity.*
 /***
 Author: Puneet Bahuguna
+ @Description: Room App Database used to get the database instance.
  ***/
-@Database(entities = arrayOf(User::class,Customer::class,UserRole::class,CustomerMapping::class,LanguageList::class),version = 1,exportSchema = false)
+@Database(entities = arrayOf(User::class,Customer::class,UserRole::class,CustomerMapping::class),version = 1,exportSchema = false)
 abstract class AppDatabase:RoomDatabase(){
     abstract fun userDao(): UserDao
     abstract fun customerDao(): CustomerListDao

@@ -7,6 +7,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.schmersaldemo.MangoApplication;
 
+/***
+ Author: Puneet Bahuguna
+ ***/
+
 public abstract class BaseActivity extends AppCompatActivity {
 
     private static final String TAG = "BaseActivity";

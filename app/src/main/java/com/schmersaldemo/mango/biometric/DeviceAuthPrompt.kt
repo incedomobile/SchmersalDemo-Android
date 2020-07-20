@@ -12,6 +12,13 @@ import com.schmersaldemo.mango.localization.BaseActivity
 import com.schmersaldemo.mango.settings.Preferences
 import com.schmersaldemo.mango.view.AddLoginAccount
 
+/*
+* Author: Puneet Bahuguna
+* @Description: Base class for biometric authentication prompt. Once we extend this
+ * class in an activity that activity becomes biometric enabled. that is it will ask
+ * for biometric authentication when user comes from background to foreground.
+* */
+
 open class DeviceAuthPrompt : BaseActivity(), LifecycleObserver,AuthenticationListener {
 
     var isWindowFocused = true

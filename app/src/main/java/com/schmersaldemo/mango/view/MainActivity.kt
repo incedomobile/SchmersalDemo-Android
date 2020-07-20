@@ -18,11 +18,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import com.schmersaldemo.mango.R
 import com.schmersaldemo.mango.biometric.DeviceAuthPrompt
+import com.schmersaldemo.mango.sapcustomers.SAPCustomersActivity
 import com.schmersaldemo.mango.settings.Preferences
-import com.schmersaldemo.mango.view.viewmodels.HomeScreenViewModel
+import com.schmersaldemo.mango.viewmodels.HomeScreenViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.nav_header_main.*
 import kotlinx.coroutines.launch
 
 /***
@@ -55,13 +55,17 @@ class MainActivity : DeviceAuthPrompt(), NavigationView.OnNavigationItemSelected
         navView.setNavigationItemSelectedListener(this)
         navView.getHeaderView(0).findViewById<TextView>(R.id.username)
             .setText(Preferences.getUsername(this))
+        if(Preferences.getuserRoleID(context)!=1){
+            nav_view.menu.getItem(2).setVisible(false)
+        }
         lifecycleScope.launch {
             if(Preferences.getLangCode(context).equals("PT-BR")){
                 loggedinUserRole = homeScreenViewModel.getUserRolePR(Preferences.getuserRoleID(context))
             }else{
                 loggedinUserRole = homeScreenViewModel.getUserRole(Preferences.getuserRoleID(context))
             }
-            userrole.setText(loggedinUserRole)
+            navView.getHeaderView(0).findViewById<TextView>(R.id.userrole)
+                .setText(loggedinUserRole)
         }
         setNavigationChecked()
         populateCustomerList()
@@ -102,7 +106,9 @@ class MainActivity : DeviceAuthPrompt(), NavigationView.OnNavigationItemSelected
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_cuslist -> {
-                // Handle the camera action
+            }
+            R.id.nav_cuslistsap->{
+                startActivity(Intent().setClass(this,SAPCustomersActivity::class.java))
             }
             R.id.nav_logout -> {
                 AlertDialog.Builder(this)
@@ -114,6 +120,9 @@ class MainActivity : DeviceAuthPrompt(), NavigationView.OnNavigationItemSelected
                         setNavigationChecked()
                     }.show()
 
+            }
+            R.id.nav_register->{
+                startActivity(Intent().setClass(this,Register::class.java))
             }
             R.id.nav_setting->{
                 startActivity(Intent().setClass(this,GeneralSettings::class.java))

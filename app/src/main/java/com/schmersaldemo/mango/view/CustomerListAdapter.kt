@@ -5,13 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.schmersaldemo.mango.data.entity.Customer
 
+
 /***
 Author: Puneet Bahuguna
  ***/
 class CustomerListAdapter (private val list: List<Customer>): RecyclerView.Adapter<CustomerListviewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomerListviewHolder {
-        val inflater=LayoutInflater.from(parent.context)
+        val inflater= LayoutInflater.from(parent.context)
         return CustomerListviewHolder(inflater,parent)
     }
 
